@@ -272,6 +272,63 @@
   .feature h3 { font-size: 18px; font-weight: 900; margin-bottom: 12px; color: var(--gold); }
   .feature p { font-size: 14px; opacity: 0.8; line-height: 1.7; }
 
+  /* ====== WORKS (施工事例) ====== */
+  .works {
+    background: white;
+    padding: 70px 20px;
+    text-align: center;
+  }
+  .works-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    max-width: 1100px;
+    margin: 40px auto 24px;
+  }
+  .work-card {
+    background: var(--gray);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    transition: transform 0.2s, box-shadow 0.2s;
+  }
+  .work-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  }
+  .work-card img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+    background: #eee;
+  }
+  .work-card .caption {
+    padding: 16px 18px;
+    text-align: left;
+  }
+  .work-card .caption .area {
+    font-size: 12px;
+    color: var(--accent);
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+  }
+  .work-card .caption .work-title {
+    font-size: 15px;
+    font-weight: bold;
+    color: var(--dark);
+    line-height: 1.5;
+  }
+  .works-note {
+    font-size: 13px;
+    color: #666;
+    margin-top: 16px;
+  }
+  @media (max-width: 600px) {
+    .work-card img { height: 200px; }
+  }
+
   /* ====== PROOF ====== */
   .proof {
     background: var(--gray);
@@ -629,6 +686,60 @@
       <p>担当者が一貫して対応。何度も説明し直す手間なし。緊急時も直通で連絡できる安心感が違います。</p>
     </div>
   </div>
+</section>
+
+<!-- WORKS -->
+<section class="works">
+  <span class="section-tag" style="background:var(--gold);color:var(--dark)">施工事例</span>
+  <h2 class="section-title" style="margin-top:16px">
+    名古屋市内の<span>施工実績</span><br>
+    （ビフォーアフター含む）
+  </h2>
+  <div class="works-grid">
+    <div class="work-card">
+      <img src="img/works/works-01-floortile.jpg" alt="名古屋市の賃貸物件 フロアタイル張り替え 施工事例" width="899" height="1200" loading="lazy" decoding="async">
+      <div class="caption">
+        <div class="area">名古屋市 ／ 賃貸物件</div>
+        <div class="work-title">フロアタイル張り替え<br>原状回復工事</div>
+      </div>
+    </div>
+    <div class="work-card">
+      <img src="img/works/works-02-mansion-floortile.jpg" alt="名古屋市の賃貸マンション フロアタイル張り替え・床リフォーム" width="900" height="1200" loading="lazy" decoding="async">
+      <div class="caption">
+        <div class="area">名古屋市 ／ 賃貸マンション</div>
+        <div class="work-title">フロアタイル張り替え<br>原状回復・床リフォーム</div>
+      </div>
+    </div>
+    <div class="work-card">
+      <img src="img/works/works-03-toilet.jpg" alt="名古屋市 トイレ床材グレータイル張り替え 施工事例" width="1200" height="816" loading="lazy" decoding="async">
+      <div class="caption">
+        <div class="area">名古屋市 ／ トイレ</div>
+        <div class="work-title">床材張り替え<br>清潔なグレータイルへ</div>
+      </div>
+    </div>
+    <div class="work-card">
+      <img src="img/works/works-04-genkan.jpg" alt="名古屋市 玄関土間ストーンタイル張り替え 原状回復工事" width="1200" height="816" loading="lazy" decoding="async">
+      <div class="caption">
+        <div class="area">名古屋市 ／ 玄関土間</div>
+        <div class="work-title">ストーンタイル張り替え<br>原状回復工事</div>
+      </div>
+    </div>
+    <div class="work-card">
+      <img src="img/works/works-05-cross.jpg" alt="名古屋市 退去後のクロス張り替え 原状回復工事" width="1200" height="654" loading="lazy" decoding="async">
+      <div class="caption">
+        <div class="area">名古屋市 ／ 退去後原状回復</div>
+        <div class="work-title">クロス張り替えで<br>お部屋の印象を改善</div>
+      </div>
+    </div>
+    <div class="work-card">
+      <img src="img/works/works-06-kitchen.jpg" alt="名古屋市 キッチン背面プラゾール施工 原状回復工事" width="900" height="1200" loading="lazy" decoding="async">
+      <div class="caption">
+        <div class="area">名古屋市 ／ キッチン</div>
+        <div class="work-title">背面プラゾール施工<br>原状回復工事</div>
+      </div>
+    </div>
+  </div>
+  <p class="works-note">※ より多くの施工事例は <a href="https://freestyle1987.com/works/" target="_blank" rel="noopener" style="color:var(--accent);font-weight:bold">公式ブログ</a> でも公開中</p>
 </section>
 
 <!-- PROOF -->
