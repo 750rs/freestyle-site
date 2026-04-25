@@ -37,7 +37,9 @@
     position: absolute; inset: 0;
     background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
   }
-  .logo { font-size: 18px; letter-spacing: 4px; opacity: 0.7; margin-bottom: 30px; text-transform: uppercase; }
+  .logo { margin-bottom: 30px; }
+  .logo img { height: 44px; width: auto; filter: brightness(0) invert(1); opacity: 0.95; display: inline-block; }
+  @media (max-width: 600px) { .logo img { height: 36px; } }
 
   .alert-bar {
     background: var(--red);
@@ -439,6 +441,7 @@
     font-size: 13px;
   }
   footer strong { color: white; font-size: 16px; }
+  footer .footer-logo { height: 32px; width: auto; filter: brightness(0) invert(1); opacity: 0.92; display: inline-block; margin-bottom: 14px; }
 
   /* ====== STICKY CTA ====== */
   .sticky-cta {
@@ -475,7 +478,7 @@
 
 <!-- HERO -->
 <section class="hero">
-  <div class="logo">● FREESTYLE</div>
+  <div class="logo"><img src="img/logo.png" alt="FreeStyle"></div>
 
   <div class="alert-bar">
     ⚠️ 空室のまま放置すると、1ヶ月あたり数万円の機会損失が発生しています
@@ -700,7 +703,7 @@
 
 <!-- FOOTER -->
 <footer>
-  <strong>FREESTYLE</strong><br><br>
+  <img src="img/logo.png" alt="FreeStyle" class="footer-logo"><br>
   📍 名古屋市内・周辺エリア対応<br>
   📞 <a href="tel:09031651205" style="color:inherit;text-decoration:underline">090-3165-1205</a><br>
   💬 <a href="https://line.me/R/ti/p/%40816lijhs" style="color:inherit;text-decoration:underline">LINE公式アカウント（@816lijhs）</a><br><br>
