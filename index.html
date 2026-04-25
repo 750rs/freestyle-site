@@ -7,19 +7,25 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   :root {
-    --red: #e63946;
-    --dark: #1a1a2e;
-    --navy: #16213e;
-    --gold: #f4a261;
+    --primary: #5a9fd4;       /* 水色：FreeStyleブランド */
+    --primary-dark: #3d7ba3;
+    --accent: #e89556;        /* オレンジ：CTA・強調 */
+    --accent-dark: #c87a3e;
+    --dark: #2c3e50;          /* 濃紺グレー：濃い背景・テキスト */
+    --navy: #3d5a80;
+    --light: #f5f7fa;         /* 薄ブルーグレー */
     --white: #ffffff;
     --gray: #f8f9fa;
     --text: #2d2d2d;
+    /* 後方互換（旧クラス名で残しつつ色だけ刷新） */
+    --red: var(--accent);
+    --gold: var(--primary);
   }
   body { font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; color: var(--text); }
 
   /* ====== HERO ====== */
   .hero {
-    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+    background: linear-gradient(135deg, #2c3e50 0%, #3d5a80 60%, #5a9fd4 100%);
     color: white;
     padding: 20px 20px 60px;
     text-align: center;
@@ -53,7 +59,7 @@
     margin-bottom: 16px;
     text-shadow: 0 2px 20px rgba(0,0,0,0.3);
   }
-  .hero h1 span { color: #f4a261; }
+  .hero h1 span { color: var(--accent); }
   .hero h1 .under {
     border-bottom: 4px solid var(--red);
     padding-bottom: 2px;
@@ -68,21 +74,41 @@
 
   .cta-main {
     display: inline-block;
-    background: linear-gradient(135deg, #e63946, #c1121f);
+    background: linear-gradient(135deg, #e89556, #c87a3e);
     color: white;
     font-size: 20px;
     font-weight: 900;
     padding: 22px 50px;
     border-radius: 50px;
     text-decoration: none;
-    box-shadow: 0 8px 30px rgba(230,57,70,0.5);
+    box-shadow: 0 8px 30px rgba(232,149,86,0.5);
     transition: transform 0.2s, box-shadow 0.2s;
     animation: bounce 2s ease-in-out infinite;
     letter-spacing: 1px;
   }
-  .cta-main:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(230,57,70,0.7); }
+  .cta-main:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(232,149,86,0.7); }
   @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
   .cta-note { font-size: 12px; opacity: 0.7; margin-top: 12px; }
+
+  .cta-main.cta-line {
+    background: linear-gradient(135deg, #06c755, #04a544);
+    box-shadow: 0 8px 30px rgba(6,199,85,0.5);
+  }
+  .cta-main.cta-line:hover { box-shadow: 0 12px 40px rgba(6,199,85,0.7); }
+
+  .cta-sub-tel {
+    display: inline-block;
+    margin-top: 18px;
+    color: rgba(255,255,255,0.95);
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 24px;
+    border: 1.5px solid rgba(255,255,255,0.4);
+    border-radius: 50px;
+    text-decoration: none;
+    transition: background 0.2s;
+  }
+  .cta-sub-tel:hover { background: rgba(255,255,255,0.1); }
 
   .trust-nums {
     display: flex;
@@ -98,7 +124,7 @@
 
   /* ====== PAIN ====== */
   .pain {
-    background: #fff8f8;
+    background: #f0f7fc;
     padding: 60px 20px;
     text-align: center;
     border-top: 4px solid var(--red);
@@ -126,7 +152,7 @@
   }
   .pain-item {
     background: white;
-    border: 2px solid #fde8e8;
+    border: 2px solid #cde4f5;
     border-left: 5px solid var(--red);
     border-radius: 8px;
     padding: 20px;
@@ -143,7 +169,7 @@
     color: var(--red);
   }
   .pain-result {
-    background: linear-gradient(135deg, #e63946, #c1121f);
+    background: linear-gradient(135deg, #e89556, #c87a3e);
     color: white;
     padding: 24px 32px;
     border-radius: 12px;
@@ -236,7 +262,7 @@
   }
   .voice p { font-size: 14px; line-height: 1.8; margin-bottom: 16px; padding-top: 20px; }
   .voice .from { font-size: 12px; color: #999; font-weight: bold; }
-  .stars { color: #f4a261; font-size: 16px; margin-bottom: 8px; }
+  .stars { color: var(--accent); font-size: 16px; margin-bottom: 8px; }
 
   /* ====== FLOW ====== */
   .flow {
@@ -280,8 +306,8 @@
   .step p { font-size: 12px; color: #666; line-height: 1.6; }
   .step .time {
     display: inline-block;
-    background: #fff0e0;
-    color: var(--gold);
+    background: #e8f3fb;
+    color: var(--primary);
     font-size: 11px;
     font-weight: bold;
     padding: 2px 10px;
@@ -291,13 +317,13 @@
 
   /* ====== URGENCY ====== */
   .urgency {
-    background: linear-gradient(135deg, #1a1a2e, #0f3460);
+    background: linear-gradient(135deg, #2c3e50, #3d5a80);
     color: white;
     padding: 50px 20px;
     text-align: center;
   }
   .urgency-box {
-    background: rgba(230,57,70,0.15);
+    background: rgba(232,149,86,0.15);
     border: 2px solid var(--red);
     border-radius: 12px;
     max-width: 700px;
@@ -321,7 +347,7 @@
 
   /* ====== CTA SECTION ====== */
   .cta-section {
-    background: linear-gradient(135deg, #e63946, #c1121f);
+    background: linear-gradient(135deg, #e89556, #c87a3e);
     padding: 80px 20px;
     text-align: center;
     color: white;
@@ -349,19 +375,21 @@
 
   .btn-line {
     display: inline-flex;
+    flex-direction: column;
     align-items: center;
-    gap: 10px;
+    gap: 4px;
     background: #06c755;
     color: white;
-    font-size: 20px;
+    font-size: 26px;
     font-weight: 900;
-    padding: 20px 40px;
+    padding: 18px 40px;
     border-radius: 50px;
     text-decoration: none;
-    box-shadow: 0 8px 30px rgba(6,199,85,0.4);
+    box-shadow: 0 8px 30px rgba(6,199,85,0.5);
     transition: transform 0.2s;
   }
   .btn-line:hover { transform: scale(1.05); }
+  .btn-line .line-sub { font-size: 12px; color: rgba(255,255,255,0.9); display: block; font-weight: normal; }
 
   .free-badge {
     display: inline-block;
@@ -416,25 +444,30 @@
   .sticky-cta {
     position: fixed;
     bottom: 0; left: 0; right: 0;
-    background: var(--red);
-    padding: 14px 20px;
-    text-align: center;
+    display: flex;
     z-index: 1000;
-    box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.25);
   }
   .sticky-cta a {
+    flex: 1;
     color: white;
-    font-size: 18px;
+    font-size: 16px;
     font-weight: 900;
     text-decoration: none;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
+    text-align: center;
+    padding: 16px 8px;
   }
-  .sticky-cta a span { font-size: 13px; font-weight: normal; opacity: 0.85; display: block; }
+  .sticky-cta .sticky-line { background: #06c755; }
+  .sticky-cta .sticky-tel { background: var(--red); }
+  .sticky-cta a span { font-size: 11px; font-weight: normal; opacity: 0.9; display: block; margin-top: 2px; }
 
   @media (max-width: 600px) {
     .step:not(:last-child)::after { display: none; }
-    .btn-tel { font-size: 22px; padding: 16px 28px; }
-    .btn-line { font-size: 16px; padding: 16px 28px; }
+    .btn-tel { font-size: 22px; padding: 16px 28px; flex-direction: column; gap: 4px; }
+    .btn-line { font-size: 22px; padding: 16px 28px; }
+    .cta-main { font-size: 17px; padding: 18px 28px; letter-spacing: 0.3px; }
+    .cta-sub-tel { font-size: 13px; padding: 9px 18px; }
   }
 </style>
 </head>
@@ -459,8 +492,9 @@
     空室期間ゼロを目指す、名古屋専門の原状回復チーム
   </p>
 
-  <a href="tel:09031651205" class="cta-main">📞 今すぐ無料見積りを依頼する</a>
-  <p class="cta-note">📅 見積り・ご相談は完全無料 ／ 24時間受付中</p>
+  <a href="https://line.me/R/ti/p/%40816lijhs" class="cta-main cta-line">💬 LINEで気軽に無料相談</a>
+  <p class="cta-note">📅 24時間受付・写真を送るだけ ／ 完全無料</p>
+  <a href="tel:09031651205" class="cta-sub-tel">📞 電話で相談する（090-3165-1205）</a>
 
   <div class="trust-nums">
     <div class="trust-num">
@@ -625,12 +659,13 @@
   <h2>まずは無料で<br>相談してみてください</h2>
   <p>名古屋エリア対応 ／ 即日見積り可能 ／ しつこい営業なし</p>
   <div class="cta-buttons">
+    <a href="https://line.me/R/ti/p/%40816lijhs" class="btn-line">
+      💬 LINEで無料相談
+      <span class="line-sub">24時間受付・写真を送るだけ</span>
+    </a>
     <a href="tel:09031651205" class="btn-tel">
       📞 090-3165-1205
       <span class="tel-sub">受付時間 9:00〜20:00（年中無休）</span>
-    </a>
-    <a href="https://line.me/R/" class="btn-line">
-      💬 LINEで無料相談
     </a>
   </div>
 </section>
@@ -667,16 +702,20 @@
 <footer>
   <strong>FREESTYLE</strong><br><br>
   📍 名古屋市内・周辺エリア対応<br>
-  📞 090-3165-1205<br>
-  💬 LINE公式アカウントあり<br><br>
+  📞 <a href="tel:09031651205" style="color:inherit;text-decoration:underline">090-3165-1205</a><br>
+  💬 <a href="https://line.me/R/ti/p/%40816lijhs" style="color:inherit;text-decoration:underline">LINE公式アカウント（@816lijhs）</a><br><br>
   <small>© 2026 freestyle All Rights Reserved.</small>
 </footer>
 
 <!-- STICKY CTA -->
 <div class="sticky-cta">
-  <a href="tel:09031651205">
-    📞 今すぐ無料見積りを依頼する
-    <span>名古屋専門 原状回復工事 freestyle</span>
+  <a href="https://line.me/R/ti/p/%40816lijhs" class="sticky-line">
+    💬 LINEで相談
+    <span>24時間OK</span>
+  </a>
+  <a href="tel:09031651205" class="sticky-tel">
+    📞 電話で依頼
+    <span>090-3165-1205</span>
   </a>
 </div>
 
