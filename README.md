@@ -6,7 +6,9 @@
 
 Netlify にデプロイ。`main` ブランチに push すると自動で再デプロイされる。
 
-- 本番URL: （デプロイ後に追記）
+- 本番URL: https://freestyle-nagoya.netlify.app
+- Netlify管理画面: https://app.netlify.com/projects/freestyle-nagoya
+- GitHubリポジトリ: https://github.com/750rs/freestyle-site
 
 ## ディレクトリ構成
 
