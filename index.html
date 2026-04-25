@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>原状回復工事 名古屋 | freestyle</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  :root {
+    --red: #e63946;
+    --dark: #1a1a2e;
+    --navy: #16213e;
+    --gold: #f4a261;
+    --white: #ffffff;
+    --gray: #f8f9fa;
+    --text: #2d2d2d;
+  }
+  body { font-family: 'Hiragino Kaku Gothic ProN', 'Meiryo', sans-serif; color: var(--text); }
+
+  /* ====== HERO ====== */
+  .hero {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 60%, #0f3460 100%);
+    color: white;
+    padding: 20px 20px 60px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute; inset: 0;
+    background: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  }
+  .logo { font-size: 18px; letter-spacing: 4px; opacity: 0.7; margin-bottom: 30px; text-transform: uppercase; }
+
+  .alert-bar {
+    background: var(--red);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0 auto 30px;
+    max-width: 600px;
+    animation: pulse 2s infinite;
+  }
+  @keyframes pulse { 0%,100%{opacity:1} 50%{opacity:0.85} }
+
+  .hero h1 {
+    font-size: clamp(26px, 6vw, 52px);
+    font-weight: 900;
+    line-height: 1.3;
+    margin-bottom: 16px;
+    text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+  }
+  .hero h1 span { color: #f4a261; }
+  .hero h1 .under {
+    border-bottom: 4px solid var(--red);
+    padding-bottom: 2px;
+  }
+
+  .hero-sub {
+    font-size: 16px;
+    opacity: 0.85;
+    margin-bottom: 40px;
+    line-height: 1.8;
+  }
+
+  .cta-main {
+    display: inline-block;
+    background: linear-gradient(135deg, #e63946, #c1121f);
+    color: white;
+    font-size: 20px;
+    font-weight: 900;
+    padding: 22px 50px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 8px 30px rgba(230,57,70,0.5);
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: bounce 2s ease-in-out infinite;
+    letter-spacing: 1px;
+  }
+  .cta-main:hover { transform: translateY(-3px); box-shadow: 0 12px 40px rgba(230,57,70,0.7); }
+  @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-6px)} }
+  .cta-note { font-size: 12px; opacity: 0.7; margin-top: 12px; }
+
+  .trust-nums {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 50px;
+    flex-wrap: wrap;
+  }
+  .trust-num { text-align: center; }
+  .trust-num .num { font-size: 40px; font-weight: 900; color: var(--gold); line-height: 1; }
+  .trust-num .num span { font-size: 20px; }
+  .trust-num .label { font-size: 12px; opacity: 0.7; margin-top: 4px; }
+
+  /* ====== PAIN ====== */
+  .pain {
+    background: #fff8f8;
+    padding: 60px 20px;
+    text-align: center;
+    border-top: 4px solid var(--red);
+  }
+  .section-tag {
+    display: inline-block;
+    background: var(--red);
+    color: white;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 4px 16px;
+    border-radius: 20px;
+    margin-bottom: 16px;
+    letter-spacing: 2px;
+  }
+  .section-title { font-size: clamp(22px, 4vw, 36px); font-weight: 900; margin-bottom: 40px; line-height: 1.4; }
+  .section-title span { color: var(--red); }
+
+  .pain-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  .pain-item {
+    background: white;
+    border: 2px solid #fde8e8;
+    border-left: 5px solid var(--red);
+    border-radius: 8px;
+    padding: 20px;
+    text-align: left;
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 1.6;
+  }
+  .pain-item::before { content: '😟 '; }
+
+  .pain-arrow {
+    font-size: 40px;
+    margin: 30px auto;
+    color: var(--red);
+  }
+  .pain-result {
+    background: linear-gradient(135deg, #e63946, #c1121f);
+    color: white;
+    padding: 24px 32px;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: 0 auto;
+    font-size: 18px;
+    font-weight: 900;
+    line-height: 1.6;
+  }
+
+  /* ====== SOLUTION ====== */
+  .solution {
+    background: var(--dark);
+    color: white;
+    padding: 70px 20px;
+    text-align: center;
+  }
+  .solution .section-title { color: white; }
+  .solution .section-title span { color: var(--gold); }
+
+  .features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 24px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .feature {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.1);
+    border-top: 3px solid var(--gold);
+    border-radius: 12px;
+    padding: 30px 24px;
+    transition: transform 0.2s;
+  }
+  .feature:hover { transform: translateY(-5px); }
+  .feature .icon { font-size: 40px; margin-bottom: 16px; }
+  .feature h3 { font-size: 18px; font-weight: 900; margin-bottom: 12px; color: var(--gold); }
+  .feature p { font-size: 14px; opacity: 0.8; line-height: 1.7; }
+
+  /* ====== PROOF ====== */
+  .proof {
+    background: var(--gray);
+    padding: 70px 20px;
+    text-align: center;
+  }
+  .stats {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+    margin: 40px auto;
+    max-width: 800px;
+  }
+  .stat {
+    background: white;
+    border-radius: 16px;
+    padding: 30px 40px;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+    min-width: 160px;
+  }
+  .stat .big { font-size: 52px; font-weight: 900; color: var(--navy); line-height: 1; }
+  .stat .big span { font-size: 28px; color: var(--red); }
+  .stat .desc { font-size: 13px; color: #666; margin-top: 8px; }
+
+  .voices {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 20px;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+  .voice {
+    background: white;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: left;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.07);
+    position: relative;
+  }
+  .voice::before {
+    content: '"';
+    font-size: 80px;
+    color: var(--gold);
+    opacity: 0.3;
+    position: absolute;
+    top: -10px; left: 16px;
+    line-height: 1;
+    font-family: serif;
+  }
+  .voice p { font-size: 14px; line-height: 1.8; margin-bottom: 16px; padding-top: 20px; }
+  .voice .from { font-size: 12px; color: #999; font-weight: bold; }
+  .stars { color: #f4a261; font-size: 16px; margin-bottom: 8px; }
+
+  /* ====== FLOW ====== */
+  .flow {
+    background: white;
+    padding: 70px 20px;
+    text-align: center;
+  }
+  .steps {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 0;
+    max-width: 900px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+  }
+  .step {
+    flex: 1;
+    min-width: 160px;
+    padding: 20px 10px;
+    position: relative;
+  }
+  .step:not(:last-child)::after {
+    content: '▶';
+    position: absolute;
+    right: -10px;
+    top: 40px;
+    font-size: 20px;
+    color: var(--gold);
+  }
+  .step-num {
+    width: 56px; height: 56px;
+    background: var(--navy);
+    color: white;
+    border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 22px; font-weight: 900;
+    margin: 0 auto 12px;
+  }
+  .step h4 { font-size: 15px; font-weight: 900; margin-bottom: 6px; }
+  .step p { font-size: 12px; color: #666; line-height: 1.6; }
+  .step .time {
+    display: inline-block;
+    background: #fff0e0;
+    color: var(--gold);
+    font-size: 11px;
+    font-weight: bold;
+    padding: 2px 10px;
+    border-radius: 20px;
+    margin-top: 6px;
+  }
+
+  /* ====== URGENCY ====== */
+  .urgency {
+    background: linear-gradient(135deg, #1a1a2e, #0f3460);
+    color: white;
+    padding: 50px 20px;
+    text-align: center;
+  }
+  .urgency-box {
+    background: rgba(230,57,70,0.15);
+    border: 2px solid var(--red);
+    border-radius: 12px;
+    max-width: 700px;
+    margin: 0 auto;
+    padding: 30px;
+  }
+  .urgency h2 { font-size: clamp(20px, 4vw, 32px); font-weight: 900; margin-bottom: 20px; }
+  .urgency h2 span { color: var(--gold); }
+  .urgency p { opacity: 0.85; line-height: 1.8; margin-bottom: 20px; }
+  .limit-badge {
+    display: inline-block;
+    background: var(--red);
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    padding: 8px 24px;
+    border-radius: 30px;
+    margin-bottom: 24px;
+    animation: pulse 1.5s infinite;
+  }
+
+  /* ====== CTA SECTION ====== */
+  .cta-section {
+    background: linear-gradient(135deg, #e63946, #c1121f);
+    padding: 80px 20px;
+    text-align: center;
+    color: white;
+  }
+  .cta-section h2 { font-size: clamp(24px, 5vw, 44px); font-weight: 900; margin-bottom: 16px; line-height: 1.3; }
+  .cta-section p { font-size: 16px; opacity: 0.9; margin-bottom: 40px; }
+  .cta-buttons { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+
+  .btn-tel {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: white;
+    color: var(--red);
+    font-size: 28px;
+    font-weight: 900;
+    padding: 20px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    transition: transform 0.2s;
+  }
+  .btn-tel:hover { transform: scale(1.05); }
+  .btn-tel .tel-sub { font-size: 12px; color: #666; display: block; font-weight: normal; }
+
+  .btn-line {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #06c755;
+    color: white;
+    font-size: 20px;
+    font-weight: 900;
+    padding: 20px 40px;
+    border-radius: 50px;
+    text-decoration: none;
+    box-shadow: 0 8px 30px rgba(6,199,85,0.4);
+    transition: transform 0.2s;
+  }
+  .btn-line:hover { transform: scale(1.05); }
+
+  .free-badge {
+    display: inline-block;
+    background: var(--gold);
+    color: var(--dark);
+    font-size: 13px;
+    font-weight: 900;
+    padding: 4px 16px;
+    border-radius: 20px;
+    margin-bottom: 24px;
+  }
+
+  /* ====== FAQ ====== */
+  .faq { background: var(--gray); padding: 70px 20px; }
+  .faq .section-title { text-align: center; }
+  .faq-list { max-width: 700px; margin: 0 auto; }
+  .faq-item {
+    background: white;
+    border-radius: 10px;
+    margin-bottom: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  }
+  .faq-q {
+    padding: 20px 24px;
+    font-weight: bold;
+    font-size: 15px;
+    cursor: pointer;
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+  }
+  .faq-q::before { content: 'Q'; color: var(--red); font-weight: 900; font-size: 18px; flex-shrink: 0; }
+  .faq-a {
+    padding: 0 24px 20px 48px;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.8;
+  }
+
+  /* ====== FOOTER ====== */
+  footer {
+    background: var(--dark);
+    color: rgba(255,255,255,0.6);
+    padding: 30px 20px;
+    text-align: center;
+    font-size: 13px;
+  }
+  footer strong { color: white; font-size: 16px; }
+
+  /* ====== STICKY CTA ====== */
+  .sticky-cta {
+    position: fixed;
+    bottom: 0; left: 0; right: 0;
+    background: var(--red);
+    padding: 14px 20px;
+    text-align: center;
+    z-index: 1000;
+    box-shadow: 0 -4px 20px rgba(0,0,0,0.2);
+  }
+  .sticky-cta a {
+    color: white;
+    font-size: 18px;
+    font-weight: 900;
+    text-decoration: none;
+    letter-spacing: 1px;
+  }
+  .sticky-cta a span { font-size: 13px; font-weight: normal; opacity: 0.85; display: block; }
+
+  @media (max-width: 600px) {
+    .step:not(:last-child)::after { display: none; }
+    .btn-tel { font-size: 22px; padding: 16px 28px; }
+    .btn-line { font-size: 16px; padding: 16px 28px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="logo">● FREESTYLE</div>
+
+  <div class="alert-bar">
+    ⚠️ 空室のまま放置すると、1ヶ月あたり数万円の機会損失が発生しています
+  </div>
+
+  <h1>
+    名古屋の大家・管理会社様へ<br>
+    <span class="under">原状回復工事</span>は<br>
+    <span>スピードが全てです。</span>
+  </h1>
+
+  <p class="hero-sub">
+    入居者退去→即日見積り→最短3日施工完了<br>
+    空室期間ゼロを目指す、名古屋専門の原状回復チーム
+  </p>
+
+  <a href="tel:0000000000" class="cta-main">📞 今すぐ無料見積りを依頼する</a>
+  <p class="cta-note">📅 見積り・ご相談は完全無料 ／ 24時間受付中</p>
+
+  <div class="trust-nums">
+    <div class="trust-num">
+      <div class="num">500<span>件+</span></div>
+      <div class="label">名古屋市内施工実績</div>
+    </div>
+    <div class="trust-num">
+      <div class="num">98<span>%</span></div>
+      <div class="label">リピート・紹介率</div>
+    </div>
+    <div class="trust-num">
+      <div class="num">3<span>日~</span></div>
+      <div class="label">最短施工完了</div>
+    </div>
+    <div class="trust-num">
+      <div class="num">0<span>円</span></div>
+      <div class="label">見積り費用</div>
+    </div>
+  </div>
+</section>
+
+<!-- PAIN -->
+<section class="pain">
+  <span class="section-tag">こんな悩みありませんか？</span>
+  <h2 class="section-title">
+    その原状回復、<span>損していませんか？</span>
+  </h2>
+  <div class="pain-list">
+    <div class="pain-item">業者に頼んだら見積りが高すぎて、何社も比較する時間がない</div>
+    <div class="pain-item">施工が遅くて空室期間が長引き、家賃収入が止まっている</div>
+    <div class="pain-item">仕上がりが雑で、入居者からクレームが来たことがある</div>
+    <div class="pain-item">退去後の対応が後回しにされて、次の入居付けが進まない</div>
+    <div class="pain-item">担当者が変わるたびに一から説明し直すのが煩わしい</div>
+    <div class="pain-item">急な退去で即対応してくれる業者がなかなか見つからない</div>
+  </div>
+  <div class="pain-arrow">↓</div>
+  <div class="pain-result">
+    放置すれば空室は長引き、<br>毎月の損失は積み重なっていきます。<br>
+    <small style="font-size:14px;opacity:0.85">今すぐ動くことが、最大の節約です。</small>
+  </div>
+</section>
+
+<!-- SOLUTION -->
+<section class="solution">
+  <span class="section-tag" style="background:var(--gold);color:var(--dark)">freestyleが選ばれる理由</span>
+  <h2 class="section-title" style="margin-top:16px">
+    名古屋の物件オーナーが<br>
+    <span>繰り返し選ぶ4つの理由</span>
+  </h2>
+  <div class="features">
+    <div class="feature">
+      <div class="icon">⚡</div>
+      <h3>圧倒的なスピード</h3>
+      <p>退去連絡の翌日に現地確認・見積提出。最短3日で施工完了。空室ゼロを全力でサポートします。</p>
+    </div>
+    <div class="feature">
+      <div class="icon">💰</div>
+      <h3>適正価格の透明見積り</h3>
+      <p>不明瞭な追加費用ゼロ。項目別の明細書を提出するので、管理会社・オーナーどちらにもご説明しやすい内容です。</p>
+    </div>
+    <div class="feature">
+      <div class="icon">🏆</div>
+      <h3>500件以上の施工実績</h3>
+      <p>名古屋市内で500件超の実績。ワンルームから大型物件まで、あらゆる現場に対応した経験とノウハウがあります。</p>
+    </div>
+    <div class="feature">
+      <div class="icon">🤝</div>
+      <h3>担当者固定・一括窓口</h3>
+      <p>担当者が一貫して対応。何度も説明し直す手間なし。緊急時も直通で連絡できる安心感が違います。</p>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section class="proof">
+  <span class="section-tag">実績・お客様の声</span>
+  <h2 class="section-title">名古屋で<span>信頼される理由</span>があります</h2>
+
+  <div class="stats">
+    <div class="stat">
+      <div class="big">500<span>+</span></div>
+      <div class="desc">累計施工件数</div>
+    </div>
+    <div class="stat">
+      <div class="big">98<span>%</span></div>
+      <div class="desc">リピート・紹介率</div>
+    </div>
+    <div class="stat">
+      <div class="big">3<span>日</span></div>
+      <div class="desc">最短施工日数</div>
+    </div>
+  </div>
+
+  <div class="voices">
+    <div class="voice">
+      <div class="stars">★★★★★</div>
+      <p>退去連絡した翌朝には現地確認に来てくれて、その日のうちに見積りが届きました。3日で施工完了、次の入居者もすぐ決まりました。</p>
+      <div class="from">名古屋市内 / 賃貸管理会社 担当者様</div>
+    </div>
+    <div class="voice">
+      <div class="stars">★★★★★</div>
+      <p>今まで使っていた業者より安くて仕上がりも綺麗。もっと早く知りたかった。今は管理物件全てお任せしています。</p>
+      <div class="from">名古屋市内 / 投資用物件オーナー様</div>
+    </div>
+    <div class="voice">
+      <div class="stars">★★★★★</div>
+      <p>担当者が変わらないので話が早い。急な対応もいつも快く引き受けてくれます。信頼できる業者を探していた方には絶対おすすめ。</p>
+      <div class="from">名古屋市内 / 不動産会社 オーナー様</div>
+    </div>
+  </div>
+</section>
+
+<!-- FLOW -->
+<section class="flow">
+  <span class="section-tag" style="background:var(--navy)">ご依頼の流れ</span>
+  <h2 class="section-title" style="margin-top:16px">たった<span>4ステップ</span>で完了</h2>
+  <div class="steps">
+    <div class="step">
+      <div class="step-num">1</div>
+      <h4>お問い合わせ</h4>
+      <p>電話・LINEどちらでもOK。まずはお気軽に</p>
+      <span class="time">24時間受付</span>
+    </div>
+    <div class="step">
+      <div class="step-num">2</div>
+      <h4>現地確認・見積り</h4>
+      <p>翌日中に現地へ。その日のうちに見積書提出</p>
+      <span class="time">最短即日</span>
+    </div>
+    <div class="step">
+      <div class="step-num">3</div>
+      <h4>施工開始</h4>
+      <p>承認後すぐに着工。丁寧かつ迅速に施工</p>
+      <span class="time">最短翌日～</span>
+    </div>
+    <div class="step">
+      <div class="step-num">4</div>
+      <h4>完成・引き渡し</h4>
+      <p>仕上がり確認・写真報告。次の入居へGO</p>
+      <span class="time">最短3日完了</span>
+    </div>
+  </div>
+</section>
+
+<!-- URGENCY -->
+<section class="urgency">
+  <div class="urgency-box">
+    <div class="limit-badge">⚠️ 今月の受付枠 残りわずか</div>
+    <h2><span>今動かないと</span>、また1ヶ月が無駄になります</h2>
+    <p>
+      空室1ヶ月＝家賃数万円の損失。<br>
+      原状回復を後回しにするほど、機会損失は積み重なります。<br>
+      freestyleでは月の施工枠が決まっているため、<br>
+      <strong style="color:var(--gold)">お問い合わせはお早めに</strong>お願いしております。
+    </p>
+  </div>
+</section>
+
+<!-- CTA SECTION -->
+<section class="cta-section">
+  <div class="free-badge">🎁 見積り・相談 完全無料</div>
+  <h2>まずは無料で<br>相談してみてください</h2>
+  <p>名古屋エリア対応 ／ 即日見積り可能 ／ しつこい営業なし</p>
+  <div class="cta-buttons">
+    <a href="tel:0000000000" class="btn-tel">
+      📞 090-3165-1205
+      <span class="tel-sub">受付時間 9:00〜20:00（年中無休）</span>
+    </a>
+    <a href="https://line.me/R/" class="btn-line">
+      💬 LINEで無料相談
+    </a>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="faq">
+  <span class="section-tag" style="display:block;text-align:center;margin-bottom:16px">よくある質問</span>
+  <h2 class="section-title">FAQ</h2>
+  <div class="faq-list">
+    <div class="faq-item">
+      <div class="faq-q">見積りは本当に無料ですか？</div>
+      <div class="faq-a">はい、完全無料です。現地確認・見積書の作成・ご提案まで一切費用はかかりません。断っていただいても問題ありません。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">急な退去でも対応できますか？</div>
+      <div class="faq-a">はい、対応可能です。退去連絡をいただければ、最短翌日に現地確認に伺います。緊急案件も積極的に受け付けています。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">名古屋市外でも対応していますか？</div>
+      <div class="faq-a">基本は名古屋市内・周辺エリアが対応範囲です。市外の場合はご相談ください。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">クロス・フローリング・クリーニングなど全部対応できますか？</div>
+      <div class="faq-a">はい。クロス張替え・フローリング補修・ハウスクリーニング・設備修繕まで原状回復に必要な工事はすべて一括で対応しています。</div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q">複数物件をまとめて依頼できますか？</div>
+      <div class="faq-a">もちろんです。管理会社様・複数物件オーナー様のまとめてのご依頼も大歓迎です。割引対応もご相談ください。</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <strong>FREESTYLE</strong><br><br>
+  📍 名古屋市内・周辺エリア対応<br>
+  📞 090-3165-1205<br>
+  💬 LINE公式アカウントあり<br><br>
+  <small>© 2026 freestyle All Rights Reserved.</small>
+</footer>
+
+<!-- STICKY CTA -->
+<div class="sticky-cta">
+  <a href="tel:0000000000">
+    📞 今すぐ無料見積りを依頼する
+    <span>名古屋専門 原状回復工事 freestyle</span>
+  </a>
+</div>
+
+</body>
+</html>
