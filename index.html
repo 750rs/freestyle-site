@@ -259,6 +259,43 @@
   }
   .cta-sub-tel:hover { background: rgba(255,255,255,0.1); }
 
+  /* 管理会社向けサブCTA（HERO内・控えめバッジ） */
+  .cta-biz {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin: 22px auto 0;
+    padding: 10px 20px;
+    background: rgba(255,255,255,0.06);
+    border: 1px dashed rgba(255,255,255,0.35);
+    border-radius: 10px;
+    color: rgba(255,255,255,0.92);
+    text-decoration: none;
+    font-size: 13px;
+    line-height: 1.5;
+    max-width: 560px;
+    text-align: left;
+    transition: background 0.2s, border-color 0.2s;
+  }
+  .cta-biz:hover { background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.6); }
+  .cta-biz .cta-biz-label {
+    flex-shrink: 0;
+    font-size: 11px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    color: var(--gold);
+    background: rgba(0,0,0,0.25);
+    padding: 4px 10px;
+    border-radius: 20px;
+    text-transform: uppercase;
+  }
+  .cta-biz .cta-biz-text { font-weight: 600; }
+  .cta-biz .cta-biz-text small { display: block; opacity: 0.75; font-weight: 400; font-size: 11px; margin-top: 2px; }
+  @media (max-width: 600px) {
+    .cta-biz { font-size: 12px; padding: 9px 14px; gap: 8px; }
+    .cta-biz .cta-biz-label { font-size: 10px; padding: 3px 8px; }
+  }
+
   .trust-nums {
     display: flex;
     justify-content: center;
@@ -965,6 +1002,14 @@
   <p class="cta-note">📅 24時間受付・写真を送るだけ ／ 完全無料</p>
   <a href="tel:09031651205" class="cta-sub-tel">📞 電話で相談する（090-3165-1205）</a>
 
+  <!-- 管理会社向けサブCTA -->
+  <div style="margin-top:6px;">
+    <a href="https://line.me/R/ti/p/%40816lijhs" class="cta-biz">
+      <span class="cta-biz-label">管理会社様へ</span>
+      <span class="cta-biz-text">複数物件まとめてのご依頼・月締請求にも対応<small>継続発注の優遇制度あり ／ LINEまたはお電話でご相談ください</small></span>
+    </a>
+  </div>
+
   <div class="trust-nums">
     <div class="trust-num">
       <div class="num">500<span>件+</span></div>
@@ -1125,42 +1170,60 @@
   </h2>
   <div class="works-grid">
     <div class="work-card">
-      <img src="img/works/works-01-floortile.jpg" alt="名古屋市の賃貸物件 フロアタイル張り替え 施工事例" width="899" height="1200" loading="lazy" decoding="async">
+      <picture>
+        <source type="image/webp" srcset="img/works/works-01-floortile.webp">
+        <img src="img/works/works-01-floortile.jpg" alt="名古屋市の賃貸物件 フロアタイル張り替え 施工事例" width="899" height="1200" loading="lazy" decoding="async">
+      </picture>
       <div class="caption">
         <div class="area">名古屋市 ／ 賃貸物件</div>
         <div class="work-title">フロアタイル張り替え<br>原状回復工事</div>
       </div>
     </div>
     <div class="work-card">
-      <img src="img/works/works-02-mansion-floortile.jpg" alt="名古屋市の賃貸マンション フロアタイル張り替え・床リフォーム" width="900" height="1200" loading="lazy" decoding="async">
+      <picture>
+        <source type="image/webp" srcset="img/works/works-02-mansion-floortile.webp">
+        <img src="img/works/works-02-mansion-floortile.jpg" alt="名古屋市の賃貸マンション フロアタイル張り替え・床リフォーム" width="900" height="1200" loading="lazy" decoding="async">
+      </picture>
       <div class="caption">
         <div class="area">名古屋市 ／ 賃貸マンション</div>
         <div class="work-title">フロアタイル張り替え<br>原状回復・床リフォーム</div>
       </div>
     </div>
     <div class="work-card">
-      <img src="img/works/works-03-toilet.jpg" alt="名古屋市 トイレ床材グレータイル張り替え 施工事例" width="1200" height="816" loading="lazy" decoding="async">
+      <picture>
+        <source type="image/webp" srcset="img/works/works-03-toilet.webp">
+        <img src="img/works/works-03-toilet.jpg" alt="名古屋市 トイレ床材グレータイル張り替え 施工事例" width="1200" height="816" loading="lazy" decoding="async">
+      </picture>
       <div class="caption">
         <div class="area">名古屋市 ／ トイレ</div>
         <div class="work-title">床材張り替え<br>清潔なグレータイルへ</div>
       </div>
     </div>
     <div class="work-card">
-      <img src="img/works/works-04-genkan.jpg" alt="名古屋市 玄関土間ストーンタイル張り替え 原状回復工事" width="1200" height="816" loading="lazy" decoding="async">
+      <picture>
+        <source type="image/webp" srcset="img/works/works-04-genkan.webp">
+        <img src="img/works/works-04-genkan.jpg" alt="名古屋市 玄関土間ストーンタイル張り替え 原状回復工事" width="1200" height="816" loading="lazy" decoding="async">
+      </picture>
       <div class="caption">
         <div class="area">名古屋市 ／ 玄関土間</div>
         <div class="work-title">ストーンタイル張り替え<br>原状回復工事</div>
       </div>
     </div>
     <div class="work-card">
-      <img src="img/works/works-05-cross.jpg" alt="名古屋市 退去後のクロス張り替え 原状回復工事" width="1200" height="654" loading="lazy" decoding="async">
+      <picture>
+        <source type="image/webp" srcset="img/works/works-05-cross.webp">
+        <img src="img/works/works-05-cross.jpg" alt="名古屋市 退去後のクロス張り替え 原状回復工事" width="1200" height="654" loading="lazy" decoding="async">
+      </picture>
       <div class="caption">
         <div class="area">名古屋市 ／ 退去後原状回復</div>
         <div class="work-title">クロス張り替えで<br>お部屋の印象を改善</div>
       </div>
     </div>
     <div class="work-card">
-      <img src="img/works/works-06-kitchen.jpg" alt="名古屋市 キッチン背面プラゾール施工 原状回復工事" width="900" height="1200" loading="lazy" decoding="async">
+      <picture>
+        <source type="image/webp" srcset="img/works/works-06-kitchen.webp">
+        <img src="img/works/works-06-kitchen.jpg" alt="名古屋市 キッチン背面プラゾール施工 原状回復工事" width="900" height="1200" loading="lazy" decoding="async">
+      </picture>
       <div class="caption">
         <div class="area">名古屋市 ／ キッチン</div>
         <div class="work-title">背面プラゾール施工<br>原状回復工事</div>
