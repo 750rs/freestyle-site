@@ -145,3 +145,5 @@ footer small { opacity: 0.6; display: block; line-height: 1.7; }
 .sticky-cta a span { font-size: 11px; font-weight: normal; opacity: 0.9; display: block; margin-top: 2px; }
 @media (min-width: 900px) { .sticky-cta { max-width: 520px; left: auto; right: 20px; bottom: 20px; border-radius: 14px; } }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .btn-line, .btn-tel { transition: none; } }
+.hero-official { font-size: 12.5px; opacity: 0.9; margin-top: 14px; }
+.hero-official a { color: #fff; }
