@@ -1,0 +1,31 @@
+# Netlify 設定（リポジトリ内で完結。管理画面の操作は不要）
+
+[build]
+  publish = "."
+
+# 旧URL・重複URLの正規化（SEO: 1URL=1ページ）
+[[redirects]]
+  from = "/index.html"
+  to = "/"
+  status = 301
+  force = true
+
+# 画像・CSSは長期キャッシュ（表示速度＝Core Web Vitals 改善）
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=604800"
+
+# セキュリティヘッダー（信頼性シグナル）
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-Frame-Options = "SAMEORIGIN"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=()"
