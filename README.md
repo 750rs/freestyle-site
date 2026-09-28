@@ -14,11 +14,27 @@ Netlify にデプロイ。`main` ブランチに push すると自動で再デ�
 
 ```
 freestyle-site/
-├── index.html      # LP本体（このファイルを編集すれば内容が変わる）
-├── README.md       # このファイル
-├── deploy.sh       # 更新用ショートカットスクリプト
+├── index.html                  # トップページ（LP本体）
+├── cross/index.html            # クロス張替え（単価・相場・6畳の費用例）
+├── cushion-floor/index.html    # クッションフロア張替え
+├── floor-tile/index.html       # フロアタイル張替え
+├── house-cleaning/index.html   # ハウスクリーニング・エアコン洗浄
+├── tachiai/index.html          # 退去立会代行
+├── genjo-kaifuku/index.html    # 原状回復工事ガイド（オーナー向け解説）
+├── company/index.html          # 会社概要・代表プロフィール
+├── area/{minami,minato,atsuta,nakagawa}/index.html  # 区別ページ
+├── assets/sub.css              # サブページ共通CSS（index.html は独自のCSSを内包）
+├── img/                        # ロゴ・OG画像・施工写真
+├── sitemap.xml / robots.txt    # 検索エンジン向け
+├── netlify.toml                # Netlify設定（リダイレクト・キャッシュ・セキュリティヘッダー）
+├── SEO対策チェックリスト.md      # サイト外でやるSEO作業の手順（Search Console・ビジネスプロフィール等）
+├── README.md                   # このファイル
+├── deploy.sh                   # 更新用ショートカットスクリプト
 └── .gitignore
 ```
+
+サブページの単価・電話番号などを変える場合は、該当ページの `index.html` を直接編集すればOK。
+全ページ共通のフッター・ナビを変える場合は各ページに同じ変更を入れる（Claude に「全ページのフッターの◯◯を変えて」と頼むのが早い）。
 
 ## 更新手順
 
